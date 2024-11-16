@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chebyshevDistance"
+version = "0.1"
+authors = [{name = "Maria Korshunova", email="mm.korshunova@yandex.ru"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+['version']
+
+[tool.setuptools]
+packages = ["chebyshevDistance"]
+
+[tool.setuptools.package-data]
+chebyshevDistance = [
+    "python/*.so"
+]
