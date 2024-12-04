@@ -1,6 +1,6 @@
-/.dvc11
 txt.txt
 dvc.lock
 chebyshevDistance.egg-info/*
 .dvcignore
 .gitignore
+/.dvc11
