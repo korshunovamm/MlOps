@@ -1,21 +1,31 @@
-# Chebyshev Distance
-Рассчет расстояния Чебышева между двумя веторами с использованием python bindings, сравнение работой scipy.spatial.distance.chebyshev.
+# PyTorchLightning
 
-Создать образ и запустить в интерактивном режиме:
+## DVC
+
+Добавим dvc для контроля версий модели, данных и экспериментов
+
 ```bash
-docker build -t trace .
-docker run --rm -it trace /bin/bash
+dvc init
+dvc add data/CIFAR10
+git commit -m "Добавлены данные CIFAR10 в DVC"
 ```
 
-Собрать проект:
+### Настройка удалённого хранилища
 ```bash
-make ChebyshevDistance
-python3 -m build
-pip3 install dist/*.whl
+dvc remote add -d storage <REMOTE_URL>
+dvc push
 ```
 
-Сравнить время работы алгоритма на C++ с pybinding и библиотченого scipy:
+### Воспроизведение (из настроек dvc.yaml)
+
 ```bash
-python3 perf.py
+avc repro
 ```
 
+### Добавление логов
+```
+dvc add logs
+git add logs.dvc
+git commit -m "Добавлены логи тренировок в DVC"
+dvc push
+```

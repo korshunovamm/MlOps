@@ -1,0 +1,14 @@
+defaults:
+  - _self_
+  - data: data
+  - model: model
+
+logger:
+  save_dir: "./logs"              # Путь для логов
+  logs_file: "cifar10_experiment" # Название эксперимента
+
+trainer:
+  max_epochs: 10             # Количество эпох
+  accelerator: "auto"        # Использовать GPU, если доступно
+  devices: 1                 # Количество устройств
+  log_every_n_steps: 10      # Логгирование каждые N шагов
