@@ -1,4 +1,5 @@
 txt.txt
 chebyshevDistance.egg-info/*
 .gitignore
-/.dvc11
+/load_data.py
+/DVC_storage/files/md5
