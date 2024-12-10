@@ -101,29 +101,3 @@ class CIFAR10Classifier(LightningModule):
 
     def configure_optimizers(self):
         return torch.optim.Adam(self.parameters(), lr=self.lr)
-
-
-
-
-
-# class MNISTDataset(Dataset):
-#     def __init__(self, data_dir, train=True, transform=None, download=False):
-#         self.data = MNIST(root=data_dir, train=train, download=True)
-#         self.transform = transform
-
-#     def __len__(self):
-#         return len(self.data)
-
-#     def __getitem__(self, idx):
-#         # Загружаем изображение и метку
-#         image, label = self.data[idx]
-#         if self.transform:
-#             image = self.transform(image)
-
-#         # Вычисляем след
-#         vector_size = 10
-#         v1 = np.random.rand(vector_size).tolist()
-#         v2 = np.random.rand(vector_size).tolist()
-#         distance = ChebyshevDistance.chebyshevDistance(v1, v2)
-
-#         return image, label
